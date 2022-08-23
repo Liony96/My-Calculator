@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+
+* {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #aaaaaa;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.links {
+    display: flex;
+    left: 5px;
+    position: absolute;
+    flex-direction: column;
+}
+
+img {
+    height: 0.8em;
+    width: 0.8em;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+button {
+    background-color: #aaaaaa;
+    border: solid 1px gray;
+    margin: 0;
+    padding: 0;
+    height: 85px;
+    width: 85px;
+}
+
+.numbers {
+    background-color: #fff;
+}
+
+.calculator-container {
+    border-top: 25px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+    height: fit-content;
+    width: fit-content;
+}
+.screen {
+    border: 1px solid black;
+    border-bottom: none;
+    border-top: none;
+    background-color: #fff;
+    height: 80px;
+}
+
+.buttons-container {
+    width: fit-content;
+    padding: 0;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4, auto);
+    column-gap: 0;
+    row-gap: 0;
+    justify-content: center;
+}
+
+.equals {
+    height: 170px;
+    grid-row: 4 / 6;
+    grid-column: 4;
+    background-color: pink;
+}
+
