@@ -1,5 +1,7 @@
 //Getting the elements
 //Operands
+let holderOperand = '';
+let result = 0;
 let operation = '';
 let counter = 0;
 let on = false;
@@ -36,7 +38,7 @@ signs.forEach(sign => {
         if (onOff.textContent === 'OFF') {
             signSpan.textContent = sign.textContent;
             operation = signSpan.textContent;
-            console.log(operation);
+            console.log(signSpan.textContent);
             holdNumber();
         } else return
     }); 
@@ -46,7 +48,14 @@ clear.addEventListener('click', clearFunction);
 eraserBtn.addEventListener('click', erase);
 onOff.addEventListener('click', OnOFF);
 decimalBtn.addEventListener('click', setDecimal);
-equals.addEventListener('click', console.log(operation));
+equals.addEventListener('click', () => {
+    if (signSpan.textContent === '+') add();
+    if (signSpan.textContent === '-') subs();
+    if (signSpan.textContent === '*') mult();
+    if (signSpan.textContent === '÷') div();    
+    holderSpan.textContent = '';
+    signSpan.textContent = '';
+});
 
 //Functions
 //Appending the numbers
@@ -69,12 +78,16 @@ function holdNumber() {
 }
 
 //Clear function
+function reset() {
+    
+}
+
 function clearFunction() {
     if (screen.textContent != '') {
         holderOperand = '';
         holderSpan.textContent = '';
-        screen.textContent = '0';
         signSpan.textContent = '';
+        screen.textContent = '0';
         counter = 0;
     } else return
 }
@@ -109,3 +122,34 @@ function setDecimal() {
     if (!screen.textContent.includes('.')) screen.textContent += '.';
 }
 
+function add(a, b) {
+    a = Number(holderSpan.textContent);
+    b = Number(screen.textContent);
+    result = a + b;
+    screen.textContent = result;
+}
+
+function subs(a, b) {
+    a = Number(holderSpan.textContent);
+    b = Number(screen.textContent);
+    result = a - b;
+    screen.textContent = result;
+}
+
+function mult(a, b) {
+    a = Number(holderSpan.textContent);
+    b = Number(screen.textContent);
+    result = a * b;
+    screen.textContent = result;
+}
+
+function div(a, b) {
+    a = Number(holderSpan.textContent);
+    b = Number(screen.textContent);
+    if (b != 0) {
+        result = a / b;
+        screen.textContent = result.toFixed(2);
+    } else {
+        alert('You can not divide by 0');
+    }
+}
