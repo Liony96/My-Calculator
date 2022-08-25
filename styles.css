@@ -38,8 +38,12 @@ button {
     border: solid 1px gray;
     margin: 0;
     padding: 0;
-    height: 85px;
-    width: 85px;
+    height: 90px;
+    width: 90px;
+}
+
+#on-off {
+    background-color: #71fa7d;
 }
 
 .numbers {
@@ -53,13 +57,37 @@ button {
     border-bottom: 5px solid black;
     height: fit-content;
     width: fit-content;
+    background-color: black;
 }
 .screen {
-    border: 1px solid black;
-    border-bottom: none;
-    border-top: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0.2em;
+    text-align: end;
     background-color: #fff;
-    height: 80px;
+    height: 50px;
+    border: 1px solid black;
+    border-top: none;
+}
+
+.sign-screen {
+    border: solid 1px black;
+    border-bottom: none;
+    margin: 0;
+    padding-left: 0.2em;
+    height: 30px;
+    font-size: 0.9em;
+    text-align:left ;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+span {
+    text-align: center;
+    color: rgb(90, 90, 90);
+    font-size: 0.9em;
 }
 
 .buttons-container {
@@ -75,7 +103,7 @@ button {
 }
 
 .equals {
-    height: 170px;
+    height: auto;
     grid-row: 4 / 6;
     grid-column: 4;
     background-color: pink;
